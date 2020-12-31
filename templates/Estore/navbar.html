@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <!-- Prism CSS -->
+    <link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+</head>
+<body>
+    <nav>
+        <a class='nav-logo-link' href="{% url "Estore:product_list" %}">
+            <img class="nav-logo" src="{% static 'images/nav_icon.png' %}">
+        </a>
+        <ul class="nav-list">
+            <li><a href="{% url "cart:cart_view" %}">Cart</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-block">
+        {% block content %}
+        {% endblock content %}
+    </div>
+<!-- Prism JS -->
+<script src="{% static "tinymce/js/prism.js" %}"></script>
+</body>
+</html>
